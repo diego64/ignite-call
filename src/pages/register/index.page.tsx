@@ -40,7 +40,7 @@ export default function Register() {
     if (router.query.username) {
       setValue('username', String(router.query.username))
     }
-  }, [router.query?.username, setValue])  
+  }, [router.query?.username, setValue])
 
   async function handleRegister(data: RegisterFormData) {
     try {
@@ -48,6 +48,8 @@ export default function Register() {
         name: data.name,
         username: data.username,
       })
+
+      await router.push('/register/connect-calendar')
     } catch (err) {
       if (err instanceof AxiosError && err?.response?.data?.message) {
         alert(err.response.data.message)
@@ -55,8 +57,8 @@ export default function Register() {
       }
 
       console.error(err)
+    }
   }
-}
 
   return (
     <Container>
