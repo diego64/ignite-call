@@ -16,7 +16,7 @@ export default function App({
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
-      <DefaultSeo
+        <DefaultSeo
           openGraph={{
             type: 'website',
             locale: 'pt_BR',

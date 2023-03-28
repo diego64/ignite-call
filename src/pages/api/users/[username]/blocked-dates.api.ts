@@ -56,7 +56,7 @@ export default async function handler(
       ((UTI.time_end_in_minutes - UTI.time_start_in_minutes) / 60)
     HAVING amount >= size
   `
-  
+
   const blockedDates = blockedDatesRaw.map((item) => item.date)
 
   return res.json({ blockedWeekDays, blockedDates })
